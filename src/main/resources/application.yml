@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    learning: trace
+
+spring:
+  #数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    #type: com.alibaba.druid.pool.DruidDataSource
+    connectionProperties: druid.stat.mergeSql=true
+mybatis:
+  #实体类所做包
+  type-aliases-package: wonders.entity
+  #mapper.xml所在位置
+  mapper-locations: classpath:mappers/*.xml
