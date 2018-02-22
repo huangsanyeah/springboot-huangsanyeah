@@ -61,8 +61,8 @@ public class UserInfoController {
         HSSFWorkbook workbook = new HSSFWorkbook();
         // 生成一个表格
         HSSFSheet sheet = workbook.createSheet();
-        // 设置表格默认列宽度为15个字节
-        sheet.setDefaultColumnWidth((short) 18);
+        // 设置表格默认列宽度为10个字节
+        sheet.setDefaultColumnWidth((short) 10);
         HSSFRow row = sheet.createRow(0);
         for (short i = 0; i < headers.length; i++) {
             HSSFCell cell = row.createCell(i);
