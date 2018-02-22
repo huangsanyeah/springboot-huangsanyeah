@@ -30,3 +30,7 @@ ps：
 
 参考：
 http://blog.csdn.net/zsl129/article/details/52962074
+
+GIT-merge:
+这个mybatis-1分支为了演示merge的操作 已经把poi的分支merge进来了
+在当前mybatis-1分支 右下角选择poi 然后merge 就把poi分支的内容merge到mybatis-1分支上来了，这时候工具会提示是否删掉poi分支（我们当然是不删除保留这个分支了）
