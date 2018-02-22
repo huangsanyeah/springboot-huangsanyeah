@@ -27,3 +27,6 @@ https://github.com/huangsanyeah/springboot-mybatis
 ps：
 1.这个是简单的excel导出 后续完善复杂的怎么弄：比如合并单元格 加上计算统计的这种
 2.导入也要做
+
+参考：
+http://blog.csdn.net/zsl129/article/details/52962074
