@@ -6,6 +6,7 @@ import com.wonders.service.UserInfoService;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -101,7 +102,14 @@ public class UserInfoController {
                     else
                     {
                         //其它数据类型都当作字符串简单处理
-                        textValue = value.toString();
+                        //解决数据库数据为空报错的问题
+                        if(!(StringUtils.isEmpty(value))){
+                            textValue = value.toString();
+                        }else {
+                            textValue="null";
+                        }
+
+
                     }
 
                     HSSFRichTextString richString = new HSSFRichTextString(textValue);
@@ -124,7 +132,10 @@ public class UserInfoController {
             }
         }
         response.setContentType("application/octet-stream");
-        response.setHeader("Content-disposition", "attachment;filename=poi导出模板.xls");//默认Excel名称
+        //Excel名称,这种写法名称中文无法解析只能显示英文
+        //response.setHeader("Content-disposition", "attachment;filename=poi.xls");
+        //这种写法的导出名可以是中文
+        response.setHeader("Content-disposition", "attachment;filename="+ new String("导出模板".getBytes(),"iso-8859-1") + ".xls");
         response.flushBuffer();
         workbook.write(response.getOutputStream());
     }
