@@ -15,6 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
+
+    /**
+     * http://localhost:8080/springboot/getUser?uid=3
+     * @param uid
+     * @return
+     */
     @RequestMapping("/getUser")
     public UserInfo getUser(Long uid){
         return userInfoService.getUser(uid);
