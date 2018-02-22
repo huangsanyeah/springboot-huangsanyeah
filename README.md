@@ -13,3 +13,6 @@ https://github.com/huangsanyeah/springboot-mybatis
 9.多数据源配置
 10.发送邮件 https://www.jianshu.com/p/7894a4af0afb
 11.Async异步
+
+springCloud看这个：
+https://www.jianshu.com/p/00327f6052d5
