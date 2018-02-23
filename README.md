@@ -11,7 +11,7 @@ https://www.bysocket.com/?p=1610
 3.redis 解决  教程 http://www.renren.io/redis/index.html
 4.poi 待完善
 5.定时任务(两种) 
-6.feign
+6.feign  https://www.jianshu.com/p/81044b437ff8 还有自定义模式
 7.日志
 8.文件上传下载
 9.多数据源配置  连接池 
