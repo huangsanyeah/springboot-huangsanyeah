@@ -22,6 +22,7 @@ https://zhuanlan.zhihu.com/p/25017961?refer=dreawer
 11.Async异步
 12.Thymeleaf模板：http://blog.didispace.com/springbootweb/
 13.统一异常处理
+14.Swagger2构建强大的RESTful API文档
 
 springCloud看这个：
 https://www.jianshu.com/p/00327f6052d5
