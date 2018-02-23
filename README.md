@@ -10,7 +10,7 @@ https://github.com/huangsanyeah/springboot-mybatis
 6.feign
 7.日志
 8.文件上传下载
-9.多数据源配置
+9.多数据源配置  https://gitee.com/jeff1993/springboot-learning-example
 10.发送邮件 https://www.jianshu.com/p/7894a4af0afb
 11.Async异步
 
