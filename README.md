@@ -7,7 +7,7 @@ https://www.jianshu.com/p/c10981697efc
 https://www.bysocket.com/?p=1610
 待完善
 2.spring catche 解决
-3.redis 解决
+3.redis 解决  教程 http://www.renren.io/redis/index.html
 4.poi 待完善
 5.定时任务(两种) 
 6.feign
