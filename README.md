@@ -57,3 +57,6 @@ https://gitee.com/shuzheng/zheng
 
 纯洁的微笑springboot+cloud
 http://ityouknow.com/spring-boot.html
+
+23种设计模式：
+https://www.jianshu.com/p/f767f5d5d876
