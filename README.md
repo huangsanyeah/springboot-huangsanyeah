@@ -1,4 +1,4 @@
-# springboot-mybatis
+# springboot-整合多种框架，具体查看分支
 这是一个springboot整合mybatis以及mybatisGenerator的demo框架
 https://github.com/huangsanyeah/springboot-mybatis
 逐步整合：
