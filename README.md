@@ -6,3 +6,7 @@ https://github.com/huangsanyeah/springboot-mybatis
 springboot-Quartz完成定时任务分布式单节点持久化
 
 参考：https://www.jianshu.com/p/d52d62fb2ac6
+
+http://blog.csdn.net/liuchuanhong1/article/details/60873295
+
+http://blog.csdn.net/zahngjialiang/article/details/78690932
