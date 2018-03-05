@@ -78,3 +78,6 @@ git在团队中最佳实践：https://www.cnblogs.com/cnblogsfans/p/5075073.html
 
 springbootlearning:
 https://gitee.com/babaio/SpringBoot-Learning
+
+
+springCloud教程：方志鹏：http://blog.csdn.net/forezp/article/details/69696915
