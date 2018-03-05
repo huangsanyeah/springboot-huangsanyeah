@@ -81,3 +81,5 @@ https://gitee.com/babaio/SpringBoot-Learning
 
 
 springCloud教程：方志鹏：http://blog.csdn.net/forezp/article/details/69696915
+
+How2J springboot:http://blog.csdn.net/growing_duck/article/details/75115913
