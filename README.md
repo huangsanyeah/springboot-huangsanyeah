@@ -10,3 +10,9 @@ springboot-Quartz完成定时任务分布式单节点持久化
 http://blog.csdn.net/liuchuanhong1/article/details/60873295
 
 http://blog.csdn.net/zahngjialiang/article/details/78690932
+
+
+
+看这个：
+http://blog.csdn.net/growing_duck/article/details/75115913
+看cdsn收藏
