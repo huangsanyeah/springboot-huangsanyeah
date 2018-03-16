@@ -83,3 +83,12 @@ https://gitee.com/babaio/SpringBoot-Learning
 springCloud教程：方志鹏：http://blog.csdn.net/forezp/article/details/69696915
 
 How2J springboot:http://blog.csdn.net/growing_duck/article/details/75115913
+
+
+springboot官方demo : https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples
+
+springboot学习资料汇总：http://www.ityouknow.com/springboot/2015/12/30/springboot-collect.html
+springcloud学习资料汇总：http://www.ityouknow.com/springcloud/2016/12/30/springcloud-collect.html
+http://book.itmuch.com/
+
+
