@@ -1,68 +1,82 @@
 package com.wonders.quartz;
 
-import org.quartz.Trigger;
+import org.quartz.Scheduler;
+import org.quartz.SchedulerException;
+import org.quartz.SchedulerFactory;
+import org.quartz.ee.servlet.QuartzInitializerListener;
+import org.quartz.impl.StdSchedulerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
-import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
-import org.springframework.scheduling.quartz.SchedulerFactoryBean;
+
+import java.io.IOException;
+import java.util.Properties;
 
 /**
  * @author huangweiyue
  * @date 2018-02-27 13:57
+ * http://localhost:8848/quartz/addJob
+ * {
+ * "jobClassName":"HelloJob",
+ * "jobGroupName":"HiGroup",
+ * "cronExpression":"0/7 * * * * ? "
+ * }
+ * 参考：
+ * https://blog.csdn.net/wujiaqi0921/article/details/78640764
+ * https://www.cnblogs.com/drift-ice/p/3817269.html
  */
 @Configuration
 public class QuartzConfigration {
-
-    @Bean(name = "jobDetail")
-    public MethodInvokingJobDetailFactoryBean detailFactoryBean(ScheduleTask task) {
-        // ScheduleTask为需要执行的任务
-        MethodInvokingJobDetailFactoryBean jobDetail = new MethodInvokingJobDetailFactoryBean();
-        /*
-         *  是否并发执行
-         *  例如每5s执行一次任务，但是当前任务还没有执行完，就已经过了5s了，
-         *  如果此处为true，则下一个任务会bing执行，如果此处为false，则下一个任务会等待上一个任务执行完后，再开始执行
-         */
-        jobDetail.setConcurrent(true);
-
-        jobDetail.setName("scheduler");// 设置任务的名字
-        jobDetail.setGroup("scheduler_group");// 设置任务的分组，这些属性都可以存储在数据库中，在多任务的时候使用
-
-        /*
-         * 这两行代码表示执行task对象中的scheduleTest方法。定时执行的逻辑都在scheduleTest。
-         */
-        jobDetail.setTargetObject(task);
-
-        jobDetail.setTargetMethod("scheduleTest");
-        return jobDetail;
+    /**
+     * 设置调度工厂，并返回调度管理器
+     * 交由spring管理,使用时由autowire注入
+     *
+     * @return
+     * @throws IOException
+     * @throws SchedulerException
+     */
+    @Bean
+    public Scheduler schedule() throws IOException, SchedulerException {
+        SchedulerFactory schedulerFactory = new StdSchedulerFactory(quartzProperties());
+        Scheduler scheduler = schedulerFactory.getScheduler();
+        scheduler.start();
+        return scheduler;
     }
 
-    @Bean(name = "jobTrigger")
-    public CronTriggerFactoryBean cronJobTrigger(MethodInvokingJobDetailFactoryBean jobDetail) {
-        CronTriggerFactoryBean tigger = new CronTriggerFactoryBean();
-        tigger.setJobDetail(jobDetail.getObject());
-        tigger.setCronExpression("0/6 * * * * ?");// 表示每隔6秒钟执行一次
-        //tigger.set
-        tigger.setName("myTigger");// trigger的name
-        return tigger;
 
+    /**
+     * 设置quartz属性
+     *
+     * @throws IOException
+     */
+    public static Properties quartzProperties() throws IOException {
+        Properties prop = new Properties();
+        prop.put("org.quartz.threadPool.class", "org.quartz.simpl.SimpleThreadPool");//实例化threadPool时,使用的线程类为SimpleThreadPool
+        //threadCount和threadPriority将setter的形式注入ThreadPoolS实例
+        prop.put("org.quartz.threadPool.threadCount", "5");//并发数
+        prop.put("org.quartz.threadPool.threadPriority", "5");//优先级
+        prop.put("org.quartz.scheduler.threadsInheritContextClassLoaderOfInitializer", true);
+        //prop.put("org.quartz.jobStore.class", "org.quartz.simpl.RAMJobStore");//默认存储在内存中
+        prop.put("org.quartz.jobStore.class", "org.quartz.impl.jdbcjobstore.JobStoreTX");//数据库持久化
+        prop.put("org.quartz.jobStore.driverDelegateClass", "org.quartz.impl.jdbcjobstore.StdJDBCDelegate");
+//        prop.put("org.quartz.jobStore.isClustered", false);//是否开启集群
+//        prop.put("org.quartz.jobStore.clusterCheckinInterval", 20000);//集群检查
+        prop.put("org.quartz.jobStore.tablePrefix", "QRTZ_");//表前缀:true
+        prop.put("org.quartz.jobStore.dataSource", "mytest");//数据库
+        prop.put("org.quartz.dataSource.mytest.driver", "com.mysql.jdbc.Driver");
+        prop.put("org.quartz.dataSource.mytest.URL", "jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8");
+        prop.put("org.quartz.dataSource.mytest.user", "root");
+        prop.put("org.quartz.dataSource.mytest.password", "123456");
+        prop.put("org.quartz.dataSource.mytest.maxConnections", "10");
+        return prop;
     }
 
-    @Bean(name = "scheduler")
-    public SchedulerFactoryBean schedulerFactory(Trigger cronJobTrigger) {
-        SchedulerFactoryBean bean = new SchedulerFactoryBean();
-        //设置是否任意一个已定义的Job会覆盖现在的Job。默认为false，即已定义的Job不会覆盖现有的Job。
-        bean.setOverwriteExistingJobs(true);
-        // 延时启动，应用启动5秒后  ，定时器才开始启动
-        bean.setStartupDelay(5);
-        // 注册定时触发器
-        bean.setTriggers(cronJobTrigger);
-        return bean;
-    }
-    //多任务时的Scheduler，动态设置Trigger。一个SchedulerFactoryBean可能会有多个Trigger
-    @Bean(name = "multitaskScheduler")
-    public SchedulerFactoryBean schedulerFactoryBean(){
-        SchedulerFactoryBean schedulerFactoryBean = new SchedulerFactoryBean();
-        return schedulerFactoryBean;
+    /**
+     * 监听到工程的启动，在工程停止再启动时可以让已有的定时任务继续进行
+     *
+     * @return
+     */
+    @Bean
+    public QuartzInitializerListener quartzInitializerListener() {
+        return new QuartzInitializerListener();
     }
 }
