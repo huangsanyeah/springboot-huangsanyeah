@@ -92,3 +92,7 @@ springcloud学习资料汇总：http://www.ityouknow.com/springcloud/2016/12/30/
 http://book.itmuch.com/
 
 
+http://xujin.org/categories/%E8%B7%9F%E6%88%91%E5%AD%A6Spring-Cloud/
+
+http://xujin.org/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/
+
