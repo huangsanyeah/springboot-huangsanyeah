@@ -10,8 +10,8 @@ https://www.bysocket.com/?p=1610
 2.spring catche 解决
 3.redis 解决  教程 http://www.renren.io/redis/index.html
 4.poi 待完善
-5.定时任务(两种) 
-6.feign  https://www.jianshu.com/p/81044b437ff8 还有自定义模式
+5.定时任务(两种)  https://www.cnblogs.com/drift-ice/p/3817269.html
+6.feign  https://www.jianshu.com/p/81044b437ff8 还有自定义模式  https://www.cnblogs.com/liferecord/p/6891188.html
 7.日志
 8.文件上传下载
 9.多数据源配置  连接池 
@@ -96,3 +96,9 @@ http://xujin.org/categories/%E8%B7%9F%E6%88%91%E5%AD%A6Spring-Cloud/
 
 http://xujin.org/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/
 
+springboot文档：
+http://blog.didispace.com/books/spring-boot-reference/I.%20Spring%20Boot%20Documentation/
+http://www.vxzsk.com/321.html
+
+springcloud中文文档
+https://springcloud.cc/spring-cloud-dalston.html

@@ -3,3 +3,26 @@
 3.此项目持续实践中
 4.看百度网盘的视频
 5.看sprinngboot cloud的书
+<springCloud微服务实战>---翟永超以及买的书
+
+学习计划有些乱，，，需要梳理下，分为3条线路吧：
+一.读书
+1.《疯狂java讲义3》
+2.《java8实战》
+3.《springCloud微服务实战》以及《深入理解springCloud与微服务构建》
+4.《高性能mysql》
+5.《把时间当作朋友》
+ps：后续跟进一本java的书，如java核心技术，effective java等。
+
+二.技术栈
+1.此项目持续跟进springboot相关整合知识
+2.Angular2官网 以及ng-zero ng-align  https://angular.cn/guide/quickstart
+
+三.视频学习
+1.线上部署
+2.权限管理
+3.待定选择一个springboot项目看
+
+四.开源项目
+1.人人
+2.vhr权限 https://blog.csdn.net/u012702547/article/details/78908294
