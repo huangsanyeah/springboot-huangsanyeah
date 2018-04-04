@@ -16,7 +16,7 @@ ps：后续跟进一本java的书，如java核心技术，effective java等,重�
 
 二.技术栈
 1.此项目持续跟进springboot相关整合知识
-2.Angular2官网 以及ng-zero ng-align  https://angular.cn/guide/quickstart
+2. ECMAScript 6 Angular2官网 以及ng-zero ng-align  https://angular.cn/guide/quickstart
 
 三.视频学习
 1.线上部署
