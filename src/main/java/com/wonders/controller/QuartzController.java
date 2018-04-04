@@ -10,7 +10,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author huangweiyue
- * @date 2018-03-28 17:08
+ * @date 2018-03-28
+ * http://localhost:8848/quartz/addJob
+ * {
+ * "jobClassName":"HelloJob",
+ * "jobGroupName":"HiGroup",
+ * "cronExpression":"0/7 * * * * ? "
+ * }
  */
 @RequestMapping("/quartz")
 @Controller
@@ -21,7 +27,7 @@ public class QuartzController {
 
     @RequestMapping("/addJob")
     @ResponseBody
-    public String addjob(@RequestBody  TaskInfo job) throws Exception//String jobClassName, String jobGroupName, String cronExpression) throws Exception
+    public String addjob(@RequestBody TaskInfo job) throws Exception//String jobClassName, String jobGroupName, String cronExpression) throws Exception
     {
         try {
 //        QuartzFactory quartzFactory = new QuartzFactory();
@@ -37,7 +43,7 @@ public class QuartzController {
                 scheduler.scheduleJob(jobDetail, trigger);
 
             } catch (SchedulerException e) {
-                System.out.println("创建定时任务失败"+e);
+                System.out.println("创建定时任务失败" + e);
                 throw new Exception("创建定时任务失败");
             }
             return "添加JOB成功";
@@ -120,12 +126,11 @@ public class QuartzController {
 
     }*/
 
-    public static Job getClass(String classname) throws Exception
-    {
+    public static Job getClass(String classname) throws Exception {
         String packageName = "com.wonders.quartz.";
         classname = packageName.concat(classname);
         Class<?> class1 = Class.forName(classname);
-        return (Job)class1.newInstance();
+        return (Job) class1.newInstance();
     }
 }
 
