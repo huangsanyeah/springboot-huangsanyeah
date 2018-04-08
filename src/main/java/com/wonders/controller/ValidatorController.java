@@ -1,6 +1,6 @@
 package com.wonders.controller;
 
-import com.wonders.entity.DemoEntity;
+import com.wonders.entity.UserInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -23,8 +23,24 @@ import java.util.List;
 @RestController
 @Slf4j
 public class ValidatorController {
+ /*   @RequestMapping("/validator")
+    public String testValidator(@RequestBody @Valid DemoModel demoModel,
+                                BindingResult bindingResult) {  //这里BindingResult参数必须紧跟被@Valid注解的参数
+        if (bindingResult.hasErrors()) {
+            StringBuffer message = new StringBuffer();
+            List<ObjectError> allErrors = bindingResult.getAllErrors();
+            for (ObjectError oneError : allErrors) {
+                message.append(oneError.getDefaultMessage()).append(";");
+            }
+            return message.toString();
+        } else {
+            return "请求成功，参数校验通过";
+        }
+
+    }*/
+
     @RequestMapping("/validator")
-    public String testValidator(@RequestBody @Valid DemoEntity demoEntity,
+    public String testValidator(@RequestBody @Valid UserInfo userInfo,
                                 BindingResult bindingResult) {  //这里BindingResult参数必须紧跟被@Valid注解的参数
         if (bindingResult.hasErrors()) {
             StringBuffer message = new StringBuffer();

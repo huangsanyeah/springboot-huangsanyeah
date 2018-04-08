@@ -8,4 +8,5 @@ import com.wonders.entity.UserInfo;
  */
 public interface UserInfoService {
     UserInfo getUser(Long uid);
+    UserInfo getUserByName(String userName);
 }

@@ -1,6 +1,7 @@
 package com.wonders.mapper;
 
 import com.wonders.entity.UserInfo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -52,4 +53,6 @@ public interface UserInfoMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(UserInfo record);
+
+    UserInfo selectUserByUserName(@Param("username") String userName);
 }

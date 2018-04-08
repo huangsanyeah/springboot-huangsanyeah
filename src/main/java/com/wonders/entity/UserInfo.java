@@ -1,5 +1,7 @@
 package com.wonders.entity;
 
+import com.wonders.validator.CustomAnnotation;
+
 public class UserInfo {
     /**
      *
@@ -53,6 +55,7 @@ public class UserInfo {
      *
      * @mbg.generated
      */
+    @CustomAnnotation(message = "该用户的状态必须为可用")
     private String username;
 
     /**

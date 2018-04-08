@@ -18,4 +18,9 @@ public class UserInfoServiceImpl implements UserInfoService {
     public UserInfo getUser(Long uid) {
         return userInfoMapper.selectByPrimaryKey(uid);
     }
+
+    @Override
+    public UserInfo getUserByName(String userName) {
+        return userInfoMapper.selectUserByUserName(userName);
+    }
 }

@@ -1,6 +1,9 @@
 package com.wonders.validator;
 
+import com.wonders.entity.UserInfo;
+import com.wonders.service.UserInfoService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -11,15 +14,16 @@ import javax.validation.ConstraintValidatorContext;
  */
 @Slf4j
 public class CustomValidator implements ConstraintValidator<CustomAnnotation, Object> {  //两个泛型分别为自定义注解和要校验的类型
-    //@Autowired  //可自由注入Spring工厂的bean
-    //private HelloService helloService;
+    @Autowired
+    private UserInfoService userService;
+
 
     /**
      * 初始化
      */
     @Override
     public void initialize(CustomAnnotation customAnnotation) {
-        log.info("my validator init");
+        log.info("---初始化自定义注解---");
     }
 
     /**
@@ -31,14 +35,21 @@ public class CustomValidator implements ConstraintValidator<CustomAnnotation, Ob
      */
     @Override
     public boolean isValid(Object o, ConstraintValidatorContext constraintValidatorContext) {
-       /* String value = helloService.sayHellp(o.toString());
-        log.info(value);*/
         Boolean flag;
-        if (o.equals("测试")) {
-            flag = true;
-        } else {
-            flag = false;
+        log.info(o.toString());
+        try {
+            UserInfo userInfo = userService.getUserByName(o.toString());
+            if (userInfo != null && userInfo.getState() == (byte) 1) {
+                flag = true;
+            } else {
+                flag = false;
+            }
+            return flag;
+        } catch (Exception e) {
+            log.error("校验异常，{}", e);
+
         }
-        return flag;
+        return false;
+
     }
 }

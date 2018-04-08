@@ -135,4 +135,12 @@
       username = #{username,jdbcType=VARCHAR}
     where uid = #{uid,jdbcType=BIGINT}
   </update>
+  <!--selectUserByUserName-->
+  <select id="selectUserByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
+
+    select
+    <include refid="Base_Column_List" />
+    from user_info
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
 </mapper>
