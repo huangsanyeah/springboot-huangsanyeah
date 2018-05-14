@@ -1,9 +1,10 @@
 1.《疯狂java讲义》
-2.Angular2
+2.Angular2 看https://www.jianshu.com/p/2a12ddce544e 看第四章
 3.此项目持续实践中
 4.看百度网盘的视频
 5.看springboot cloud的书
 <springCloud微服务实战>---翟永超以及买的书
+AOP拦截参数
 
 学习计划有些乱，，，需要梳理下，分为3条线路吧：
 一.读书
