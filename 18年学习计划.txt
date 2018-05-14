@@ -12,6 +12,7 @@
 3.《springCloud微服务实战》以及《深入理解springCloud与微服务构建》
 4.《高性能mysql》
 5.《把时间当作朋友》
+6.《阿里巴巴开发手册》再读一遍
 ps：后续跟进一本java的书，如java核心技术，《effective java》（已购买）等,重构等。
 
 二.技术栈
@@ -26,3 +27,38 @@ ps：后续跟进一本java的书，如java核心技术，《effective java》�
 四.开源项目
 1.人人
 2.vhr权限 https://blog.csdn.net/u012702547/article/details/78908294
+
+大数据学习路线：
+ 摘取自知乎
+ 必须技能10条:
+ 01.Java高级(虚拟机、并发)
+ 02.Linux 基本操作
+ 03.Hadoop（此处为侠义概念单指HDFS+MapReduce+Yarn ）
+ 04.HBase（JavaAPI操作+Phoenix ）
+ 05.Hive(Hql基本操作和原理理解）
+ 06.Kafka
+ 07.Storm
+ 08.Scala需要
+ 09.Python
+ 10.Spark (Core+sparksql+Spark streaming ）
+ 高阶技能6条:
+ 11.机器学习算法以及mahout库加MLlib
+ 12.R语言
+ 13.Lambda 架构
+ 14.Kappa架构
+ 15.Kylin
+ 16.Aluxio二、学习路径由于本人是从Java开发通过大概3个月的自学转到大数据开发的。
+
+ 所以我主要分享一下自己的学习路劲。
+ 第一阶段:01.Linux学习（跟鸟哥学就ok了）
+ 02.Java 高级学习（《深入理解Java虚拟机》、《Java高并发实战》）
+ 第二阶段:03.Hadoop （董西成的书）
+ 04.HBase（《HBase权威指南》）
+ 05.Hive（《Hive开发指南》）
+ 06.Scala（《快学Scala》）
+ 07.Spark （《Spark 快速大数据分析》）
+ 08.Python （跟着廖雪峰的博客学习就ok了）
+
+ 对应知乎Live:
+ https://www.zhihu.com/lives/904731922184425472
+
