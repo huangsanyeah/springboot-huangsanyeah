@@ -26,8 +26,10 @@ https://zhuanlan.zhihu.com/p/25017961?refer=dreawer
 14.Swagger2构建强大的RESTful API文档
 15.flyway  http://blog.didispace.com/spring-boot-flyway-db-version/
 16.读取配置文件
+17.消息队列 https://www.cnblogs.com/hlhdidi/p/6535677.html
 springCloud看这个：
 https://www.jianshu.com/p/00327f6052d5
+
 
 
 码云：
@@ -113,3 +115,7 @@ https://blog.csdn.net/qq_27384769/article/details/79603473
 徐靖峰博客：
 https://www.cnkirito.moe/archives/page/3/
 https://blog.csdn.net/u013815546/article/details/77542471
+
+http://springboot.fun/
+
+http://www.ymq.io/page9/
