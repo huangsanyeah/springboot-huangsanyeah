@@ -30,7 +30,7 @@ https://zhuanlan.zhihu.com/p/25017961?refer=dreawer
 springCloud看这个：
 https://www.jianshu.com/p/00327f6052d5
 18.线程和java8
-
+19.加密
 
 码云：
 https://www.zhihu.com/question/53729800/answer/255785661
