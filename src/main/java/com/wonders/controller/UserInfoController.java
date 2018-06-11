@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("springboot")
+//http://localhost:8075/springboot/getUser?uid=1
 public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
