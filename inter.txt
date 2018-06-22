@@ -427,3 +427,116 @@ JAVA程序员怎么样才能进一线互联网公司
 
 15.你有什么想问的？
 
+
+
+
+作者：老刘
+链接：https://zhuanlan.zhihu.com/p/37988465
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+一、Java基础部分1、使用length属性获取数组长度，public、private、protected、friendly区别
+2、Collection和Collections区别
+3、String s=new String(‘xyz’);创建了几个object对象
+4、short s1;s1=s1+1;是否有错？
+5、Overriding和Overloading区别
+6、Set里面的元素不能重复，用什么方法区分重复与否。
+7、给出一个常见的runtime exception。
+8、error和exception区别。
+9、List和Set是否继承自Collection接口。
+10、abstract class和interface 的区别。
+11、是否可以继承String类。
+12、try{}里有一个return语句，紧跟在try后的finally里的code会不会被执行，什么时候执行，return前执行还是return后执行。
+13、最有效率的方法算2*8等于几
+14、两个对象值相同，x.equal(y)==true，但是却可有不同的hashcode，这句话对不对。
+15、值传递和引用传递
+16、switch是否作用在byte、long、string上。
+17、ArrayList和Vector区别，HashMap和Hashtable区别（了解这几个类的底层jdk中的编码方式）。
+18、GC是什么，为什么要有GC，简单介绍GC。
+19、float f=3.4是否正确。
+20、介绍Java中的Collection framework。
+21、Collection框架中实现比较方法
+22、String和Stringbuffer的区别
+23、final、finally、finalize区别
+24、面向对象的特征
+25、String是最基本的数据类型吗。
+26、运行时异常和一般异常的区别
+27、说出ArrayList、Vector、Linkedlist的存储性能和特性
+28、heap和stack区别
+29、Java中的异常处理机制的简单原理和应用
+30、垃圾回收的原理和特点，并考虑2种回收机制
+31、说出一些常用的 集合类和方法
+32、描述一下JVM加载Class文件的原理和机制
+33、排序的几种方法，了解。（算法和数据结构在面试的时候还没有被问到）
+34、Java语言如何进行异常处理，throws，throw，try catch finally代表什么意义，try块中可以抛出异常吗
+35、一个’.java’源文件是否可以包括多个类，有什么限制。
+36、Java中有几种类型流，jdk为每种类型的流提供了一些抽象类以供继承，请分别说出它们是哪些类。
+37、Java中会存在内存泄漏吗，请简单描述。
+38、静态变量和实例变量的区别。
+39、什么是Java序列化，如何实现java序列化。
+40、是否可以从一个static方法内部发生对非static方法调用。
+41、写clone方法，通常都有一行代码。
+42、Java中如何跳出多重嵌套循环
+43、说出常用类、包、接口，各举5个。
+44、Java中实现线程的方法，用关键字修饰同步方法。
+45、同步和异步区别。
+46、线程同步的方法。
+47、字符串常用方法，字符串转化为整型数方法，整型数转化为字符串方法。
+二、Java高级
+1、简述面向对象的理解，并举例说出你的理解。
+2、写出单例模式。
+3、写出一种11位手机号的正则表达式
+4、实现字符串多个空格转换一个空格
+5、字符串常用方法，substring(),split()。
+6、start()和run()区别。
+7、写出知道的设计模式。
+8、Webservice介绍。（这个我自己没用过，渣渣了）
+9、说出Servlet生命周期，Servlet和CGI区别。
+10、sleep和wait的区别。
+11、什么是发射，如何实现。
+12、检查字符串回文，实现英文中单词个数和单词次数统计（部分公司要求较高，需要手动编程，百度查找一些面试常用编程题即可）。
+13、tcp/ip协议三次握手。
+14、http协议几种请求方式，区别。
+15、Ajax请求是否可以实现同步。
+16、隐藏URL方式。
+17、描述取到一个网页内容的实现步骤，不需要具体实现过程（就是爬虫:取到网页的URL，然后从URL中国获取网页内容），考察逻辑思维能力。
+18、简述form表单提交post方法与get方法在字符编码、http协议方面的区别。
+19、一个http请求从开始到结束都经历了哪些过程，简写流程图。
+三、框架（只介绍自己熟悉）
+1、Spring中的事务管理，支持哪几种方式，以及每种方式具体方法。
+2、Spring常用注解。
+3、Hibernate的缓存级别。
+4、hibernate是什么，工作原理。
+5、hibernate如何实现延迟加载。
+6、hibernate如何怎样类之间的关系。
+7、struts1是什么，工作流程。
+8、struts2工作流程。
+9、spring是什么。
+10、介绍IOC和AOP。
+11、springmvc工作原理。
+12、Mybatis工作流程。
+13、Mybatis与Hibernate区别。
+14、Mybatis框架传递参数方式。
+15、简述Spring事务管理，使用什么设计模式实现。
+四、数据库
+1、数据库里面的索引和约束是什么。
+2、用SQL语句实现oracle分页查询。
+3、学生成绩表的常用查询（百度即可查到，常用的查询语法）
+4、数据库性能优化常用基础知识，百万级数据优化（百度搜搜即可）。
+5、left join ,right join用法。
+6、了解redis，memcache,mongodb等，最好有项目使用经验。
+7、如何防止SQL注入。
+8、一个微博评论功能的数据库设计，部门表和员工表的设计，权限管理系统的数据库设计（数据库设计这个是一个重点，面试了几家公司都问到了，而且是重点）。
+9、简述悲观锁和乐观锁。
+五、linux基础1、修改系统时间命令、修改权限命令、
+六、前端基础
+1、javascript中怎样选中一个checkbox，设置它无效的方式。
+2、form表单 的input可以设置readonly和disable区别。
+3、javascript变量范围有什么不同，全局变量和局部变量。
+4、列举3种数据类型。
+5、javascript常用对象
+6、javascript中常用的取值赋值方法，对于单选按钮，复选框等的取值赋值等方法。（百度即可，javascript常用基础）
+7、jquery取值赋值基本方法。
+8、获取单选按钮的值，获取复选框的值，获取下拉列表的值，后去复选框的值，获取单选按钮组的值，文本框、文本域赋值。
+9、jquery的append与appendTo区别。
+10、CSS盒子模型的4个顺序。
