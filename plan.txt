@@ -4,6 +4,7 @@
 4.看百度网盘的视频
 5.看springboot cloud的书
 6.VUE得看
+7.redis mongoDB
 <springCloud微服务实战>---翟永超以及买的书
 AOP拦截参数
 
