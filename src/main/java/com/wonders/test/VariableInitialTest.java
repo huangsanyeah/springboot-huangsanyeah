@@ -14,6 +14,8 @@ public class VariableInitialTest {
     public static void main(String[] args) {
         //局部变量除了形参外必须显式的初始化
         int b;
+        //局部变量不属于任何类或者实例（对象）,它总是保存在所在方法的栈内存中，栈内存中的变量无须系统回收，往往随方法或者代码块的执行而结束
+        //因为局部变量仅仅保存进本类型的值或者对象的引用
 //        System.out.println(b);
     }
 }
