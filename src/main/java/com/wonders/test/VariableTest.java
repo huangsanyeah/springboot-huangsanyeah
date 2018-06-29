@@ -15,6 +15,10 @@ public class VariableTest {
         new VariableTest().f();
     }
 
+    //初始化代码块 name被覆盖了
+    {
+        name = "店小二";
+    }
     private void f() {
         //局部变量
         String name = "李大嘴";
