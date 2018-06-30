@@ -307,6 +307,7 @@ HTTP协议，TCP/IP协议
 sync同步 数据推送超时判断 重试机制判断
 JPA @Modifying注解
 
+token缓存失效 清除redis缓存 解决
 
 
 
