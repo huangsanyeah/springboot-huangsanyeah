@@ -23,7 +23,7 @@ public class UserInfoController {
     }
 
     /**
-     * *想要看一个注解，直接点进去 比如 RequestParam 就可以看到有什么参数可以设置了 比如name defaultValue
+     * *想要看一个注解，直接点进去 比如 RequestParam 就可以看到有什么参数可以设置了 比如name defaultValue required(是否必须)
      **/
 
     @RequestMapping("/zhujie")
