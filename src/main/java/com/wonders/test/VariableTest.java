@@ -10,6 +10,7 @@ package com.wonders.test;
 public class VariableTest {
     //成员变量
     private String name = "白展堂";
+    private Integer a;
 
     public static void main(String[] args) {
         new VariableTest().f();
