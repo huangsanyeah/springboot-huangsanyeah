@@ -14,10 +14,19 @@ import javax.validation.ConstraintValidatorContext;
  */
 @Slf4j
 public class CustomValidator implements ConstraintValidator<CustomAnnotation, Object> {  //两个泛型分别为自定义注解和要校验的类型
+    /**
+     * @Description:
+     * @Author: huangweiyue
+     * @Date: 2018/7/1 15:59
+     * @Param:
+     * @Return:
+     * @ModifiedBy:
+     * @Exception
+     **/
+
     @Autowired
     private UserInfoService userService;
-
-
+    
     /**
      * 初始化
      */
