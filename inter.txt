@@ -311,6 +311,10 @@ token缓存失效 清除redis缓存 解决
 
 
 
+TimeTask重试机制 无法注入service NPE异常
+https://blog.csdn.net/ziany/article/details/78845433
+
+
 一面：(8月1号上午：电话面试：80分32秒)
 
 1.自我介绍？
