@@ -2,6 +2,7 @@ package com.wonders.collection;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.function.Predicate;
 
 /**
  * @Description Predicate的removeIf()批量删除所有符合filter条件的所有元素, 该方法需要一个Predicate作为参数，也是函数式接口
@@ -16,14 +17,32 @@ import java.util.HashSet;
 public class PredicateDemo {
     public static void main(String[] args) {
         Collection collection = new HashSet();
-        collection.add("NBA2017年总冠军球队是金州勇士");
+        collection.add("NBA2017年总冠军球队是金州勇士哈");
         collection.add("大灌篮");
-        collection.add("伟大的迈克尔乔丹");
+        collection.add("伟大的迈克尔乔丹哈");
         collection.add("了不起的盖茨比");
         collection.add("哈哈哈哈哈哈哈哈哈哈哈哈哈哈");
         collection.add("12138");
         //使用Lambada表达式来遍历 目标类型是Predicate来遍历集合元素
-        collection.removeIf(ele -> ((String) ele).length() < 10);
+        //所有长度小于10的都会被删除
+        //collection.removeIf(ele -> ((String) ele).length() < 10);
         System.out.println(collection);
+
+
+        //输出3
+        System.out.println(Call(collection, ele -> ((String) ele).contains("哈")));
+        //输出5
+        System.out.println(Call(collection, ele -> ((String) ele).length() > 3));
+    }
+
+    public static int Call(Collection collection, Predicate predicate) {
+        int total = 0;
+        for (Object obj : collection) {
+            if (predicate.test(obj)) {
+                total++;
+            }
+
+        }
+        return total;
     }
 }
