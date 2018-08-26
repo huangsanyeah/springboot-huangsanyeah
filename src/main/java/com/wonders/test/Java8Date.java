@@ -36,7 +36,7 @@ public class Java8Date {
         //-----------------------LocalDate------------------------------
         LocalDate localDate = LocalDate.now();
         //2018-07-07
-        System.out.println("localDate--->" + localDate);
+        System.out.println("localDate--->" + localDate.toString());
         //获得2014年的第146天
         localDate = LocalDate.ofYearDay(2014, 146);
         System.out.println(localDate);
