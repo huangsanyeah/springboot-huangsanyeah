@@ -19,6 +19,7 @@ public class StringSplit {
         String[] arrayStr = str.split(",");
         //结果是5，而不是预想中的8
         System.out.println(arrayStr.length);
+        System.out.println(arrayStr.toString());
         for (int i = 0; i < arrayStr.length; i++) {
             System.out.println(arrayStr[i]);
         }
