@@ -20,13 +20,18 @@ public class RemoveDemo {
         System.out.println("set after add" + set);
         System.out.println("list after add" + list);
         for (int i = 0; i < 3; i++) {
-            //TODO 这里是remove(E)
+            //boolean remove(Object o);
             set.remove(i);
-            //FIXME 这里remove的是坐标 不是元素 因为Listd的remove方法remove的是 并不是<E>  list.remove((Integer)i)
+            //E remove(int index)
             list.remove(i);
         }
         System.out.println("================================================");
         System.out.println("set after remove" + set);
         System.out.println("list after remove" + list);
+//        set after add[-3, -2, -1, 0, 1, 2]
+//        list after add[-3, -2, -1, 0, 1, 2]
+//================================================
+//        set after remove[-3, -2, -1]
+//        list after remove[-2, 0, 2]
     }
 }
