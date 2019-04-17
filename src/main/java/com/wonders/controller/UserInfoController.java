@@ -11,18 +11,30 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2018-02-13 11:48
  */
 @RestController
-@RequestMapping("springboot")
+@RequestMapping("redis")
 public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
 
     /**
-     * http://localhost:8080/springboot/getUser?uid=3
+     * http://localhost:8099/redis/getUser?uid=3
      * @param uid
      * @return
      */
     @RequestMapping("/getUser")
     public UserInfo getUser(Long uid){
         return userInfoService.getUser(uid);
+    }
+
+    /**
+     * http://localhost:8099/redis/useRedisTemplate
+     *
+     * @param uid
+     * @return
+     */
+    @RequestMapping("/useRedisTemplate")
+    public String useRedisTemplate(Long uid) {
+        userInfoService.useTemplateCache();
+        return "使用RedisTemplate缓存";
     }
 }
