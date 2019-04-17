@@ -12,26 +12,25 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("redis")
-public class UserInfoController {
+public class RedisController {
     @Autowired
     private UserInfoService userInfoService;
 
-    /**
-     * http://localhost:8099/redis/getUser?uid=3
-     *
-     * @param uid
-     * @return
+    /***
+     * @description http://localhost:8099/redis/getUser?uid=3 使用注解缓存 需要配置CacheManager（两种方式：配置文件或者java类）
+     * 失效时间等也是在CacheManager中配置
+     * @author huangweiyue
+     * @date Created in 2019/4/17-19:46
      */
     @RequestMapping("/getUser")
     public UserInfo getUser(Long uid){
         return userInfoService.getUser(uid);
     }
 
-    /**
-     * http://localhost:8099/redis/useRedisTemplate
-     *
-     * @param uid
-     * @return
+    /***
+     * @description http://localhost:8099/redis/useRedisTemplate 使用restTemplate模板缓存
+     * @author huangweiyue
+     * @date Created in 2019/4/17-19:49
      */
     @RequestMapping("/useRedisTemplate")
     public String useRedisTemplate(Long uid) {
