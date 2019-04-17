@@ -1,5 +1,5 @@
 server:
-  port: 8075
+  port: 8099
 
 logging:
   level:
@@ -19,3 +19,13 @@ mybatis:
   type-aliases-package: wonders.entity
   #mapper.xml所在位置
   mapper-locations: classpath:mappers/*.xml
+#redis:
+#      database: 11
+#      host: localhost
+#      port: 6379
+#      password: pass123
+#      pool:
+#        max-active: 8
+#        min-idle: 0
+#        max-wait: -1
+#      timeout: 0
