@@ -1,8 +1,7 @@
 package com.wonders.util;
 
 
-import org.apache.commons.lang.StringUtils;
-
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @Description 数据脱敏工具类 注意 StringUtils是org.apache.commons.lang.StringUtils下面的

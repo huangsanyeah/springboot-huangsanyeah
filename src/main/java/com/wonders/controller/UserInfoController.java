@@ -18,6 +18,7 @@ public class UserInfoController {
 
     /**
      * http://localhost:8099/redis/getUser?uid=3
+     *
      * @param uid
      * @return
      */
