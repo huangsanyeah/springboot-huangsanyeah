@@ -1,4 +1,4 @@
-package com.wonders.sdf;
+package com.wonders.util.sdf;
 
 import java.text.DateFormat;
 import java.text.ParseException;
