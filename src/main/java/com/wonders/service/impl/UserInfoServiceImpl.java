@@ -1,7 +1,8 @@
-package com.wonders.service;
+package com.wonders.service.impl;
 
 import com.wonders.entity.UserInfo;
 import com.wonders.mapper.UserInfoMapper;
+import com.wonders.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.StringRedisTemplate;
