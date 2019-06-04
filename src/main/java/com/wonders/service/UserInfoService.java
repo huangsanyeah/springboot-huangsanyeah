@@ -16,7 +16,32 @@ public interface UserInfoService {
     UserInfo getUser(Long uid);
 
     /**
-     * 使用redisTemplate缓存
+     * 使用注解缓存
+     *
+     * @param uid
+     * @return
      */
-    void useTemplateCache();
+    UserInfo cacheUserByKeyGenerator(Long uid);
+
+    /**
+     * 使用原生redisTempPlate缓存
+     */
+    void useRedisTemplateCache();
+
+    /**
+     * 使用StringRedisTemplate缓存
+     */
+    void useStringRedisTemplateCache();
+
+
+    /**
+     * 使用自定义对象Template缓存
+     */
+    void useCustomObjectTemplateCache();
+
+
+    /**
+     * 使用自定义StringTemplate缓存
+     */
+    void useCustomStringTemplateCache();
 }

@@ -3,6 +3,7 @@ package com.wonders.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.interceptor.KeyGenerator;
@@ -28,13 +29,24 @@ import java.util.concurrent.TimeUnit;
  */
 @Configuration
 public class RedisConfig extends CachingConfigurerSupport {
+    @Value("${spring.redis.host}")
+    private  String host;
+    @Value("${spring.redis.password}")
+    private  String password;
+    @Value("${spring.redis.port}")
+    private  int port;
+    @Value("${spring.redis.database}")
+    private  int database;
+
+
     @Override
-    @Bean
+    @Bean(name = "customKeyGenerator")
     public KeyGenerator keyGenerator() {
         return (target, method, params) -> {
             StringBuilder sb = new StringBuilder();
             sb.append(target.getClass().getName());
             sb.append(method.getName());
+            sb.append("-huangsanyeah-");
             for (Object obj : params) {
                 sb.append(obj.toString());
             }
@@ -54,15 +66,15 @@ public class RedisConfig extends CachingConfigurerSupport {
         // 创建Jedis连接工厂
         JedisConnectionFactory connectionFactory = new JedisConnectionFactory(poolConfig);
         // 配置Redis连接服务器
-        connectionFactory.setHostName("127.0.0.1");
-        connectionFactory.setPort(6379);
-        connectionFactory.setPassword("pass123");
-        connectionFactory.setDatabase(11);
+        connectionFactory.setHostName(host);
+        connectionFactory.setPort(port);
+        connectionFactory.setPassword(password);
+        connectionFactory.setDatabase(database);
         return connectionFactory;
     }
 
 
-    @Bean
+    @Bean(name="customObjectTemplate")
     public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factory) {
         RedisTemplate redisTemplate = new RedisTemplate();
         redisTemplate.setConnectionFactory(factory);
@@ -79,6 +91,18 @@ public class RedisConfig extends CachingConfigurerSupport {
         return redisTemplate;
     }
 
+    @Bean(name="customStringTemplate")
+    public RedisTemplate<String, Object> redisTemplate2(RedisConnectionFactory factory) {
+        RedisTemplate redisTemplate = new RedisTemplate();
+        redisTemplate.setConnectionFactory(factory);
+        RedisSerializer<String> stringRedisSerializer = redisTemplate.getStringSerializer();
+        //设置key序列化方式为string 或者直接声明StringRedisTemplate
+        redisTemplate.setKeySerializer(stringRedisSerializer);
+        redisTemplate.setValueSerializer(stringRedisSerializer);
+        redisTemplate.afterPropertiesSet();
+        return redisTemplate;
+    }
+
     /**
      * 主启动类开启了@EnableCaching注解 那么就需要配置缓存管理器 两种方式 配置文件 或者如下的java形式
      *
@@ -88,10 +112,13 @@ public class RedisConfig extends CachingConfigurerSupport {
     @Bean
     public CacheManager cacheManager(RedisTemplate redisTemplate) {
         Map<String, Long> expires = new HashMap<>();
-        expires.put("2", TimeUnit.SECONDS.toSeconds(120));
+        expires.put("userInfo1", TimeUnit.SECONDS.toSeconds(120));
+        expires.put("userInfo2", TimeUnit.SECONDS.toSeconds(600));
+        RedisSerializer<String> stringRedisSerializer = redisTemplate.getStringSerializer();
+        //redisTemplate.setKeySerializer(stringRedisSerializer);
         RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
         cacheManager.setExpires(expires);
-        List<String> cacheNames = Arrays.asList(new String[]{"userInfo"});
+        List<String> cacheNames = Arrays.asList(new String[]{"userInfo1","userInfo2"});
         cacheManager.setCacheNames(cacheNames);
         return cacheManager;
     }

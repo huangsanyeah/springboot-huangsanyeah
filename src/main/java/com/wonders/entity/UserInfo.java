@@ -1,10 +1,17 @@
 package com.wonders.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
  * redis实体类需要序列化 也可以在RedisConfig中配置然后尸体列就不需要序列化了
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserInfo implements Serializable {
     /**
      *
