@@ -11,7 +11,7 @@ package com.wonders.basic.extendsclassoverride;
 public class Son extends Father{
 
     /**
-     * 这个方法如果不复写 那么用的就是父类的
+     * 这个方法如果不override(可以注释掉这 然后运行ClassExtentsTest的main方法查看输出) 那么用的就是父类的
      * @param fatherName
      */
     @Override
