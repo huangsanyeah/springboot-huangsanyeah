@@ -11,7 +11,14 @@ package com.wonders.basic.extendsclassoverride;
 public class ClassExtentsTest {
     public static void main(String[] args) {
         Father son=new Son();
+        son.setFatherName("son设置的fatherName");
         son.printName("爸爸");
+        son.setAddress("上海");
+        son.setFatherName("superName");
+        System.out.println(son);
+
+        Father f= son;
+        System.out.println(f);
 
         Father father=new Father();
         father.printName("爸爸");

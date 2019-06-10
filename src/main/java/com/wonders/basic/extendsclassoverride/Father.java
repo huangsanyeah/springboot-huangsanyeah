@@ -1,5 +1,7 @@
 package com.wonders.basic.extendsclassoverride;
 
+import lombok.Data;
+
 /**
  * @author huangweiyue
  * @version v1.0
@@ -8,8 +10,10 @@ package com.wonders.basic.extendsclassoverride;
  * @date Created in 2019-06-07
  * @modifiedBy
  */
+@Data
 public class Father {
     private String fatherName;
+    private String address;
     public void printName(String fatherName){
         System.out.println("【父类】输出"+fatherName);
     }
