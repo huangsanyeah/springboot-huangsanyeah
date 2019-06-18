@@ -12,9 +12,5 @@ import lombok.Data;
  */
 @Data
 public class Father {
-    private String fatherName;
-    private String address;
-    public void printName(String fatherName){
-        System.out.println("【父类】输出"+fatherName);
-    }
+    public int a=5;
 }
