@@ -36,7 +36,6 @@ public class Son extends Father{
     }
 
     public Son(String sonName) {
-        super.
         this.sonName = sonName;
     }
 }
