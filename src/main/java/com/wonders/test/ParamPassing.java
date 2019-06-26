@@ -7,20 +7,20 @@ package com.wonders.test;
  */
 public class ParamPassing {
     private static int intStatic = 222;
-    private static String stingStatic = "old String";
+    private static String stringStatic = "old String";
     private static StringBuilder staticStringBuilder = new StringBuilder("old StringBuilder");
 
     public static void main(String[] args) {
-       /* method(intStatic);
+        method(intStatic);
         System.out.println(intStatic);
         method();
-        System.out.println(intStatic);*/
-
-       /* method(stingStatic);
-        System.out.println(stingStatic);*/
+        System.out.println(intStatic);
+        method(stringStatic);
+        System.out.println(stringStatic);
 
         method(staticStringBuilder,staticStringBuilder);
         System.out.println(staticStringBuilder);
+
     }
 
     public static void method(int intStatic) {
