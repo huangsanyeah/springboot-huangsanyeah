@@ -34,5 +34,9 @@ public class ArrayAsListTest {
         //stringList.add("four");
 //        stringList.remove(2);
 //        stringList.clear();
+
+        stringList.replaceAll( e -> e.toUpperCase() );
+
+        System.out.println(stringList);
     }
 }
