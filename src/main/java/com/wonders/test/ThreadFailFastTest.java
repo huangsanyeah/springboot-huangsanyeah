@@ -6,11 +6,7 @@ import java.util.List;
 
 /**
  * @author huangweiyue
- * @version v1.0
- * @task
  * @description 多线程情况下对同一个list修改造成的fail fast效果
- * @date Created in 2019-06-28
- * @modifiedBy
  */
 public class ThreadFailFastTest {
     /*
