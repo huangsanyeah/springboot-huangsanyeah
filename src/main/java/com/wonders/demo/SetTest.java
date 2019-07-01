@@ -1,4 +1,4 @@
-package com.wonders.test;
+package com.wonders.demo;
 
 import java.util.Collections;
 import java.util.HashSet;

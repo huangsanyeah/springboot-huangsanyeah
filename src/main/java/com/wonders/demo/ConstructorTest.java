@@ -1,4 +1,4 @@
-package com.wonders.test;
+package com.wonders.demo;
 
 /**
  * @Description 构造器 注意无参构造器

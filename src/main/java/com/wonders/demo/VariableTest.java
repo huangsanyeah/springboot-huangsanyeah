@@ -1,4 +1,4 @@
-package com.wonders.test;
+package com.wonders.demo;
 
 /**
  * @Description 尽量避免成员变量和局部变量同名的情况，如果重名，想在方法内调用成员变量 那么需要用this.来指定

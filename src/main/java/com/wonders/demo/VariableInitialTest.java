@@ -1,4 +1,4 @@
-package com.wonders.test;
+package com.wonders.demo;
 
 /**
  * @Description 测试成员变量和局部变量初始化的问题 局部变量除了形参需要显式的初始化 如 int b    成员变量则不需要 如 int a

@@ -1,4 +1,4 @@
-package com.wonders.test;
+package com.wonders.java8;
 
 import java.time.*;
 
