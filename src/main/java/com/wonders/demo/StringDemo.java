@@ -10,6 +10,7 @@ package com.wonders.demo;
  */
 public class StringDemo {
     public static void main(String[] args) {
+
         String s = "Sachin";
         //concat() method appends the string at the end
         s.concat(" Tendulkar");
