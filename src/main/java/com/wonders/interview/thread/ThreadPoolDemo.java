@@ -7,10 +7,25 @@ import java.util.concurrent.Future;
 
 public class ThreadPoolDemo {
     public static void main(String[] args) {
-        ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
-        Future<String> future = newCachedThreadPool.submit(new MyCallable());
+//        ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
+//        Future<String> future = newCachedThreadPool.submit(new MyCallable());
+//        if (!future.isDone()) {
+//            System.out.println("task has not finished, please wait!");
+//        }
+//        try {
+//            System.out.println(future.get());
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//        } finally {
+//            newCachedThreadPool.shutdown();
+//        }
+        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+        //用线程池submit
+        Future<String> future = cachedThreadPool.submit(new MyCallable());
         if (!future.isDone()) {
-            System.out.println("task has not finished, please wait!");
+            System.out.println("尚未完成");
         }
         try {
             System.out.println(future.get());
@@ -19,7 +34,7 @@ public class ThreadPoolDemo {
         } catch (ExecutionException e) {
             e.printStackTrace();
         } finally {
-            newCachedThreadPool.shutdown();
+            cachedThreadPool.shutdown();
         }
     }
 }
