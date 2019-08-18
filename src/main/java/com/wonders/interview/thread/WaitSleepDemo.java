@@ -2,6 +2,12 @@ package com.wonders.interview.thread;
 
 public class WaitSleepDemo {
     public static void main(String[] args) {
+        Object a = new Object();
+        try {
+            a.wait();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         final Object lock = new Object();
         new Thread(new Runnable() {
             @Override

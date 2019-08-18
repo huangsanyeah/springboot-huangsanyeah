@@ -3,7 +3,7 @@ package com.wonders.interview.thread;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ReentrantLockDemo implements Runnable {
-    private static ReentrantLock lock = new ReentrantLock(false);
+    private static ReentrantLock lock = new ReentrantLock(true);
 
     @Override
     public void run() {
